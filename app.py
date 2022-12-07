@@ -11,7 +11,7 @@ img_req_data = {
     'url': 'https://api.openai.com/v1/images/generations',
     'header': {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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'
+        'Authorization': ''
     },
     'data': {
         "prompt": "",
@@ -128,9 +128,10 @@ def generate_img(prompt):
     return result
 
 def main():
-    global has_start, chatbot, config
+    global has_start, chatbot, config, img_req_data
     load_dotenv()
     config['session_token'] = os.getenv('OPENAI_AUTH_KEY')
+    img_req_data['header']['Authorization'] = f'Bearer {os.getenv("OPENAI_IMG_API_KEY")}'
 
     updater = Updater(os.getenv('TELEGRAM_BOT_TOKEN'), use_context=False)
     print('Bot is running...')
