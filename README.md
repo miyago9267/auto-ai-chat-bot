@@ -1,8 +1,8 @@
 # ChatGPT Telegram bot
 
 ![python-version](https://img.shields.io/badge/python-3.8-blue.svg)
-![playwright-version](https://img.shields.io/badge/revChatGPT-0.0.31.5-green.svg)]
-![license](https://img.shields.io/badge/License-GPL%202.0-brightgreen.svg)]
+![playwright-version](https://img.shields.io/badge/revChatGPT-0.0.31.5-green.svg)
+![license](https://img.shields.io/badge/License-GPL%202.0-brightgreen.svg)
 
 ## Requirements
 - Python 3.8+ and Pipenv
