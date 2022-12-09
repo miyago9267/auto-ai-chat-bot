@@ -27,5 +27,5 @@ def main():
     bot = TelegramBot(telegram_config, chat)
     bot.run()
 
-if __name_=='__main__':
+if __name__=='__main__':
     main()
