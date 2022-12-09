@@ -14,7 +14,7 @@ def main():
     
 
     ai_config = {
-        'authorization': os.getenv('OPENAI_AUTH_KEY')
+        'Authorization': os.getenv('OPENAI_AUTH_KEY')
     }
 
     telegram_config = {

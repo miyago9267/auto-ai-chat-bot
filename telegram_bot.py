@@ -1,12 +1,14 @@
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, ContextTypes
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton, InputMediaAudio, InputMediaDocument, InputMediaPhoto, InputMediaVideo
-import telegram.constants
+import telegram.constants as constants
+from asyncChatGPT.asyncChatGPT import Chatbot as ChatGPT3Bot
+import asyncio
 import requests as req
 import json
 import os
 
 class TelegramBot:
-    def __init__(self, config, chatbot):
+    def __init__(self, config, chatbot):#: ChatGPT3Bot):
         self.updater = Updater(token=config['telegram_token'], use_context=False)
         self.chatbot = chatbot
         self.config = config
@@ -59,13 +61,14 @@ class TelegramBot:
             chat_id=update.effective_chat.id,
             reply_to_message_id=update.message.message_id,
             text=response['message'],
-            parse_mode=constants.ParseMode.MARKDOWN
+            parse_mode=constants.PARSEMODE_MARKDOWN
         )
         # update.message.reply_text('sorry qwq, it\'s WIP')
 
-    def get_chatgpt_response(message):
+    def get_chatgpt_response(self, message) -> dict:
         try:
             response = self.chatbot.get_chat_response(message)
+            print(message)
             return response
         except Exception as e:
             print(e)
