@@ -33,8 +33,10 @@ OPENAI_IMG_API_KEY="<YOUR OPENAI IMAGE GENERATE KEY>"
 
 You need to provide:
 1. Your openai chat auth key, u can get the key by following step
-    1. login to the [ChatGPT OpenAi](https://chat.openai.com/chat), u can not only login using email but also goole or microsoft account
-    2. Press your `F12`->`Application`->`Cookie`, and copy your `__Secure-next-auth.session-token` into the `.env` file
+    1. Log in to https://chat.openai.com/
+    2. Go to https://chat.openai.com/api/auth/session
+    3. Copy the `accessToken`
+    4. Replace the `OPENAI_AUTH_KEY` in `.env`
 2. Your telegram token
 3. An open ai image api key
 

@@ -68,7 +68,7 @@ class TelegramBot:
     def get_chatgpt_response(self, message) -> dict:
         try:
             response = self.chatbot.get_chat_response(message)
-            print(message)
+            # print(message)
             return response
         except Exception as e:
             print(e)
